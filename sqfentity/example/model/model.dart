@@ -96,8 +96,6 @@ const seqIdentity = SqfEntitySequence(
 const myDbModel = SqfEntityModel(
     modelName: 'MyDbModel',
     databaseName: 'sampleORM_v2.1.0+3.db',
-    password:
-        null, // You can set a password if you want to use crypted database (For more information: https://github.com/sqlcipher/sqlcipher)
     // put defined tables into the tables list.
     databaseTables: [tableProduct, tableCategory, tableTodo],
     // You can define tables to generate add/edit view forms if you want to use Form Generator property
@@ -247,7 +245,6 @@ class SequenceIdentitySequence extends SqfEntitySequenceBase {
 class MyDbModel extends SqfEntityModelProvider {
   MyDbModel() {
     databaseName = myDbModel.databaseName;
-    password = myDbModel.password;
     dbVersion = myDbModel.dbVersion;
     preSaveAction = myDbModel.preSaveAction;
     logFunction = myDbModel.logFunction;

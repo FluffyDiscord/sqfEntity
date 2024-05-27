@@ -87,12 +87,6 @@ class SqfEntityConnectionFfi extends SqfEntityConnectionBase {
           options: OpenDatabaseOptions(
             version: connection!.dbVersion,
             onCreate: createDb,
-            onConfigure: (db) async {
-              if (connection!.password != null) {
-                //https://github.com/davidmartos96/sqflite_sqlcipher/issues/28
-                await db.rawQuery("PRAGMA KEY='${connection!.password!}'");
-              }
-            },
           ));
       //  }
     });

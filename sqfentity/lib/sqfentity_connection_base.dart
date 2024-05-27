@@ -19,17 +19,15 @@
 import 'dart:async' show Future;
 import 'dart:io';
 import 'package:flutter/services.dart';
-import 'package:sqflite_sqlcipher/sqflite.dart';
+import 'package:sqflite/sqflite.dart';
 
 class SqfEntityConnection {
   SqfEntityConnection(this.databaseName,
       {this.bundledDatabasePath,
       this.dbVersion = 1,
-      this.password,
       this.databasePath});
   String databaseName;
   String? bundledDatabasePath;
-  String? password;
   String? databasePath; // Option to set path at runtime.
   int dbVersion;
 }

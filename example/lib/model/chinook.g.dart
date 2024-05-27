@@ -367,7 +367,6 @@ class TablePlaylistTrack extends SqfEntityTableBase {
 class Chinookdb extends SqfEntityModelProvider {
   Chinookdb() {
     databaseName = chinookdb.databaseName;
-    password = chinookdb.password;
     dbVersion = chinookdb.dbVersion;
     preSaveAction = chinookdb.preSaveAction;
     logFunction = chinookdb.logFunction;

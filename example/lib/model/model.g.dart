@@ -139,7 +139,6 @@ class SequenceIdentitySequence extends SqfEntitySequenceBase {
 class MyDbModel extends SqfEntityModelProvider {
   MyDbModel() {
     databaseName = myDbModel.databaseName;
-    password = myDbModel.password;
     dbVersion = myDbModel.dbVersion;
     preSaveAction = myDbModel.preSaveAction;
     logFunction = myDbModel.logFunction;

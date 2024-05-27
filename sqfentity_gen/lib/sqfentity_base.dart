@@ -378,7 +378,6 @@ class SqfEntityModel {
       this.modelName,
       this.sequences,
       this.formTables,
-      this.password,
       this.ignoreForFile,
       this.dbVersion,
       this.defaultColumns,
@@ -394,9 +393,6 @@ class SqfEntityModel {
 
   /// This value is optional. When databasePath is empty then EntityBase uses the path from sqflite.getDatabasesPath()
   final String? databasePath;
-
-  /// Password for SQLite encryption (Optional)
-  final String? password;
 
   /// Add tables that you defined as SqfEntityTable const into
   final List<SqfEntityTable>? databaseTables;
@@ -4273,7 +4269,6 @@ abstract class SqfEntityModelBase {
   String? databaseName;
   String? bundledDatabasePath;
   String? instanceName;
-  String? password;
   String? databasePath; // Option to set path at runtime.
   int? dbVersion;
   List<SqfEntityTableBase>? databaseTables;

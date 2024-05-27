@@ -63,7 +63,6 @@ class SqfEntityModelBuilder extends SqfEntityModelBase {
       ..instanceName = instancename
       ..modelName = dbModelName
       ..databaseName = getStringValue(model, 'databaseName')
-      ..password = getStringValue(model, 'password')
       ..dbVersion = getIntValue(model, 'dbVersion')
       ..sequences = toSequenceList(getListValue(model, 'sequences'))
       ..databaseTables = toTableList(
@@ -538,7 +537,7 @@ $__createModelSequences
 class ${_m.modelName} extends SqfEntityModelProvider {
   ${_m.modelName}() {
     databaseName = $_dbName;
-    $_dbPassword $_dbVersion
+    $_dbVersion
     preSaveAction = ${_m.instanceName}.preSaveAction;
     logFunction = ${_m.instanceName}.logFunction;
     $__tableList
@@ -573,9 +572,6 @@ class ${_m.modelName} extends SqfEntityModelProvider {
   String get _dbName => _m.instanceName != null
       ? '${_m.instanceName}.databaseName'
       : '\'${_m.databaseName}\'';
-  String get _dbPassword => _m.instanceName != null
-      ? 'password = ${_m.instanceName}.password;'
-      : 'password = ${getValueWithQuotes(_m.password)};';
   String get _dbVersion => _m.instanceName != null
       ? 'dbVersion = ${_m.instanceName}.dbVersion;'
       : 'dbVersion = ${_m.dbVersion};';
@@ -604,7 +600,6 @@ $__createModelTablesConst
 const ${tocamelCase(_m.modelName)} = SqfEntityModel(
     modelName: '${_m.modelName}',
     databaseName: '${_m.databaseName}',
-    password: ${_m.password == null ? 'null' : '\'${_m.password}\''},
     bundledDatabasePath: ${_m.bundledDatabasePath == null ? 'null' : '\'${_m.bundledDatabasePath}\''},
     databaseTables: [$__tableViewListConst],
     formTables: [$__tableListConst]

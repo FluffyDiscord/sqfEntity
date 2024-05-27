@@ -20,8 +20,7 @@ import 'dart:async' show Future;
 import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
-//import 'package:sqflite/sqflite.dart';
-import 'package:sqflite_sqlcipher/sqflite.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:synchronized/synchronized.dart';
 import 'sqfentity_connection_base.dart';
 
@@ -76,7 +75,7 @@ class SqfEntityConnectionMobile extends SqfEntityConnectionBase {
       _db = await openDatabase(path,
           version: connection!.dbVersion,
           onCreate: createDb,
-          password: connection!.password); // SQLChipher
+      ); // SQLChipher
 
       // uncomment line below if you want to use sqflite
       // _db = await openDatabase(path, version: connection!.dbVersion, onCreate: createDb); // SQFLite
